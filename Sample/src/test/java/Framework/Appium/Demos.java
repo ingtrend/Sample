@@ -24,21 +24,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
-public class Demos extends Capability {
-
-	AndroidDriver<AndroidElement> driver;
-	
-	@BeforeTest
-	public void bt() throws IOException, InterruptedException
-	{	
-		Runtime.getRuntime().exec("taskkill /F /IM /node.exe");
-		Thread.sleep(5000);
-		service = startServer();
-		driver = capabilities(appPackage,appActivity,deviceName,platformName,chromeExecutable);
-		//if any of my element takes time it will wait for extra 30 secs
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-	}
-	
+public class Demos  {
 	@Test
 	public void testcase3()
 	{
